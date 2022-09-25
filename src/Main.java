@@ -3,8 +3,9 @@ import javax.swing.border.EmptyBorder;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.HashMap;
 
-public class Main{
+public class Main {
 
     public static void main(String[] args){
 
@@ -13,15 +14,28 @@ public class Main{
         JPanel panel = new JPanel();
 
         //Information pane
-        JLabel label = new JLabel("Hello! This is the Help Finder application. We understand that people all over the world need help.");
-        label.setBounds(25, 20, 1330, 25);
-        label.setFont(new Font("Arial", Font.BOLD,28));
-        label.setForeground(Color.WHITE);
-        label.setBackground(Color.BLUE);
+        JLabel label = new JLabel("If you are in help of need, please enter your information under \"I need help\" and then click \"submit\". After submitting, click \"search for help\" and the volunteer details from your");
+        label.setBounds(25, 10, 1530, 20);
+        label.setFont(new Font("Arial", Font.BOLD,18));
+        label.setForeground(Color.BLUE);
         label.setOpaque(true);
-        label.setBorder(new EmptyBorder(0,10,0,0));
         panel.add(label);
 
+        //Information pane
+        JLabel label12 = new JLabel("area will be displayed. You mau call/text the volunteer directly at the their contact number. If you are looking to volunteer, click  \"I can help\", add the required information and");
+        label12.setBounds(25, 30, 1530, 20);
+        label12.setFont(new Font("Arial", Font.BOLD,18));
+        label12.setForeground(Color.BLUE);
+        label12.setOpaque(true);
+        panel.add(label12);
+
+        //Information pane
+        JLabel label0 = new JLabel( "click \"submit\". Thank your for volunteering! It is because of people like you that the world is a better place.");
+        label0.setBounds(25, 50, 1530, 20);
+        label0.setFont(new Font("Arial", Font.BOLD,18));
+        label0.setForeground(Color.BLUE);
+        label0.setOpaque(true);
+        panel.add(label0);
 
         //Name label for textfield
         JLabel label1 = new JLabel("Name:");
@@ -87,12 +101,12 @@ public class Main{
 
         //Multiple choice select (I need help)
         JRadioButton radioButton1 = new JRadioButton("I need help");
-        radioButton1.setBounds(17, 50, 160, 50);
+        radioButton1.setBounds(17, 65, 160, 50);
         radioButton1.setFont(new Font("Arial", Font.BOLD,18));
         panel.add(radioButton1);
         //Multiple choice select (I Can help)
         JRadioButton radioButton2 = new JRadioButton("I can help");
-        radioButton2.setBounds(811, 50, 150, 50);
+        radioButton2.setBounds(811, 65, 150, 50);
         radioButton2.setFont(new Font("Arial", Font.BOLD,18));
         panel.add(radioButton2);
 
@@ -154,6 +168,31 @@ public class Main{
         });
         panel.add(button1);
 
+        String zipcodeA[] = {"08520","08525","08534","08540","08541","08542","08543","08544","08550","08536" };
+
+        HashMap<String, String> zipCodes = new HashMap<String, String>();
+        zipCodes.put("08520", "John");
+        zipCodes.put("08525", "Karen");
+        zipCodes.put("08534", "Russell");
+        zipCodes.put("08540", "Bob");
+        zipCodes.put("08541", "Jack");
+        zipCodes.put("08542", "Suresh");
+        zipCodes.put("08543", "Mahesh");
+        zipCodes.put("08544", "Christopher");
+        zipCodes.put("08550", "Richard");
+        zipCodes.put("08536", "Rowley");
+
+        HashMap<String, String> phoneNumbers = new HashMap<String, String>();
+        phoneNumbers.put("John", "609-610-1111");
+        phoneNumbers.put("Karen", "609-610-2222");
+        phoneNumbers.put("Russel", "609-610-3333");
+        phoneNumbers.put("Bob", "609-610-4444");
+        phoneNumbers.put("Jack", "609-610-5555");
+        phoneNumbers.put("Suresh", "609-610-6666");
+        phoneNumbers.put("Mahesh", "609-610-7777");
+        phoneNumbers.put("Christopher", "609-610-8888");
+        phoneNumbers.put("Richard", "609-610-9999");
+        phoneNumbers.put("Rowley", "8923704587024893");
 
         //Submit Button
         JButton button2 = new JButton("Search for help");
@@ -163,8 +202,11 @@ public class Main{
         button2.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent evt) {
-                if(zipCode1[0].equals(zipCode2[0])){
-                    String foundHelp = "Help is on the way! \nThe name of the person helping is: " + name2[0] + "\nPhone number: " + phoneNumber2[0];
+                if((zipCode1[0].equals(zipcodeA[0])) || (zipCode1[0].equals(zipcodeA[9]))){
+                    String nameFromZip = zipCodes.get(zipCode1[0]);
+                    System.out.println(nameFromZip);
+                    System.out.println(phoneNumbers.get(nameFromZip));
+                    String foundHelp = "Help is on the way! \nThe name of the person helping is: " + nameFromZip + "\nPhone number: " + phoneNumbers.get(nameFromZip);
                     JOptionPane.showMessageDialog(null, foundHelp, "Found Help", JOptionPane.INFORMATION_MESSAGE);
                 }
             }
