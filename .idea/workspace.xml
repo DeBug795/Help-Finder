@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="37263bb9-e5e7-44a4-a660-5b9a96c8e7f3" name="Changes" comment="Finished the main logic and UI. Now we just need to touch up the UI a little bit. (Alignment, color, words, etc.) - RS">
-      <change afterPath="$PROJECT_DIR$/Resources/City and Zip code" afterDir="false" />
+    <list default="true" id="37263bb9-e5e7-44a4-a660-5b9a96c8e7f3" name="Changes" comment="Added hard coded database with zipcodes. Next step is to work on if statements that register the zipcode and then fix the &quot;I can help&quot; section. - RS">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
     </list>
@@ -66,7 +65,21 @@
       <option name="project" value="LOCAL" />
       <updated>1664065109113</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Added hard coded database with zipcodes. Next step is to work on if statements that register the zipcode and then fix the &quot;I can help&quot; section. - RS">
+      <created>1664077605389</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1664077605389</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Added hard coded database with zipcodes. Next step is to work on if statements that register the zipcode and then fix the &quot;I can help&quot; section. - RS">
+      <created>1664077628166</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1664077628166</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -82,6 +95,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Finished the main logic and UI. Now we just need to touch up the UI a little bit. (Alignment, color, words, etc.) - RS" />
-    <option name="LAST_COMMIT_MESSAGE" value="Finished the main logic and UI. Now we just need to touch up the UI a little bit. (Alignment, color, words, etc.) - RS" />
+    <MESSAGE value="Added hard coded database with zipcodes. Next step is to work on if statements that register the zipcode and then fix the &quot;I can help&quot; section. - RS" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added hard coded database with zipcodes. Next step is to work on if statements that register the zipcode and then fix the &quot;I can help&quot; section. - RS" />
   </component>
 </project>
