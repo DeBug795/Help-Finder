@@ -195,7 +195,7 @@ public class Main {
                 phoneNumber1[0] = pane1.getText();
                 zipCode1[0] = pane2.getText();
 
-                if((zipCode1[0].equals(zipCodeA1[0])) || (zipCode1[0].equals(zipCodeA1[1]) || (zipCode1[0].equals(zipCodeA1[2]) || (zipCode1[0].equals(zipCodeA1[3])) || (zipCode1[0].equals(zipCodeA1[4]) || (zipCode1[0].equals(zipCodeA1[5])) || (zipCode1[0].equals(zipCodeA1[6]) || (zipCode1[0].equals(zipCodeA1[7])) || (zipCode1[0].equals(zipCodeA1[8])) ||  (zipCode1[0].equals(zipCodeL.get(0)))))))){
+                if((zipCode1[0].equals(zipCodeA1[0])) || (zipCode1[0].equals(zipCodeA1[1]) || (zipCode1[0].equals(zipCodeA1[2]) || (zipCode1[0].equals(zipCodeA1[3])) || (zipCode1[0].equals(zipCodeA1[4]) || (zipCode1[0].equals(zipCodeA1[5])) || (zipCode1[0].equals(zipCodeA1[6]) || (zipCode1[0].equals(zipCodeA1[7])) || (zipCode1[0].equals(zipCodeA1[8])) || (zipCode1[0].equals(zipCodeA1[9])) || (zipCode1[0].equals(zipCodeL.get(0))) ))))){
                     String nameFromZip = zipCodes.get(zipCode1[0]);
                     System.out.println(nameFromZip);
                     System.out.println(phoneNumbers.get(nameFromZip));
