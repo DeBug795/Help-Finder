@@ -2,7 +2,10 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashMap;
+import java.util.List;
 
 public class Main {
 
@@ -98,47 +101,11 @@ public class Main {
         panel.add(pane6);
 
 
-        //Multiple choice select (I need help)
-        JRadioButton radioButton1 = new JRadioButton("I need help");
-        radioButton1.setBounds(17, 65, 160, 50);
-        radioButton1.setFont(new Font("Arial", Font.BOLD,18));
-        panel.add(radioButton1);
-        //Multiple choice select (I Can help)
-        JRadioButton radioButton2 = new JRadioButton("I can help");
-        radioButton2.setBounds(811, 65, 150, 50);
-        radioButton2.setFont(new Font("Arial", Font.BOLD,18));
-        panel.add(radioButton2);
+        String zipCodeA1[] = {"08520","08525","08534","08540","08541","08542","08543","08544","08550","08536"};
+        List<String> zipCodeL = new ArrayList<>();
+        Arrays.asList(zipCodeL);
 
-        //Submit Button for I can help
-        JButton button1 = new JButton("Submit");
-        button1.setFont(new Font("Arial", Font.BOLD,15));
-        button1.setForeground(Color.GREEN);
-        button1.setBounds(815, 250, 100, 40);
-
-        final String[] name2 = new String[1];
-        final String[] phoneNumber2 = new String[1];
-        final String[] zipCode2 = new String[1];
-
-        button1.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent evt) {
-                if(radioButton2.isSelected()){
-                    JOptionPane.showMessageDialog(null,"Your information has been recorded", "Response", JOptionPane.INFORMATION_MESSAGE);
-
-                    //Making variables for storing all the responses
-                    name2[0] = pane4.getText();
-                    phoneNumber2[0] = pane5.getText();
-                    zipCode2[0] = pane6.getText();
-
-                    System.out.println(name2[0]);
-                    System.out.println(phoneNumber2[0]);
-                    System.out.println(zipCode2[0]);
-                }
-            }
-        });
-        panel.add(button1);
-
-        String zipCodeA[] = {"08520","08525","08534","08540","08541","08542","08543","08544","08550","08536" };
+        String zipCodeA2[] = zipCodeL.toArray(zipCodeA1);
 
         HashMap<String, String> zipCodes = new HashMap<String, String>();
         zipCodes.put("08520", "John");
@@ -164,6 +131,52 @@ public class Main {
         phoneNumbers.put("Richard", "609-610-9999");
         phoneNumbers.put("Rowley", "8923704587024893");
 
+        //Multiple choice select (I need help)
+        JRadioButton radioButton1 = new JRadioButton("I need help");
+        radioButton1.setBounds(17, 65, 160, 50);
+        radioButton1.setFont(new Font("Arial", Font.BOLD,18));
+        panel.add(radioButton1);
+        //Multiple choice select (I Can help)
+        JRadioButton radioButton2 = new JRadioButton("I can help");
+        radioButton2.setBounds(811, 65, 150, 50);
+        radioButton2.setFont(new Font("Arial", Font.BOLD,18));
+        panel.add(radioButton2);
+
+        //Submit Button for I can help
+        JButton button1 = new JButton("Submit");
+        button1.setFont(new Font("Arial",Font.BOLD,15));
+        button1.setForeground(Color.blue);
+        button1.setBounds(815, 250, 100, 40);
+
+        final String[] name2 = new String[1];
+        final String[] phoneNumber2 = new String[1];
+        final String[] zipCode2 = new String[1];
+
+        button1.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent evt) {
+                if(radioButton2.isSelected()){
+                    JOptionPane.showMessageDialog(null,"Your information has been recorded", "Response", JOptionPane.INFORMATION_MESSAGE);
+
+                    //Making variables for storing all the responses
+                    name2[0] = pane4.getText();
+                    phoneNumber2[0] = pane5.getText();
+                    zipCode2[0] = pane6.getText();
+
+                    zipCodes.put(zipCode2[0], name2[0]);
+                    phoneNumbers.put(name2[0], phoneNumber2[0]);
+
+                    zipCodeL.add(zipCode2[0]);
+
+                    System.out.println(name2[0]);
+                    System.out.println(phoneNumber2[0]);
+                    System.out.println(zipCode2[0]);
+                }
+            }
+        });
+        panel.add(button1);
+
+
         //Submit Button
         JButton button2 = new JButton("Search for help");
         button2.setFont(new Font("Arial", Font.BOLD,15));
@@ -182,7 +195,7 @@ public class Main {
                 phoneNumber1[0] = pane1.getText();
                 zipCode1[0] = pane2.getText();
 
-                if((zipCode1[0].equals(zipCodeA[0])) || (zipCode1[0].equals(zipCodeA[1]) || (zipCode1[0].equals(zipCodeA[2]) || (zipCode1[0].equals(zipCodeA[3])) || (zipCode1[0].equals(zipCodeA[4]) || (zipCode1[0].equals(zipCodeA[5])) || (zipCode1[0].equals(zipCodeA[6]) || (zipCode1[0].equals(zipCodeA[7])) || (zipCode1[0].equals(zipCodeA[8])) || (zipCode1[0].equals(zipCodeA[9]))))))){
+                if((zipCode1[0].equals(zipCodeA1[0])) || (zipCode1[0].equals(zipCodeA1[1]) || (zipCode1[0].equals(zipCodeA1[2]) || (zipCode1[0].equals(zipCodeA1[3])) || (zipCode1[0].equals(zipCodeA1[4]) || (zipCode1[0].equals(zipCodeA1[5])) || (zipCode1[0].equals(zipCodeA1[6]) || (zipCode1[0].equals(zipCodeA1[7])) || (zipCode1[0].equals(zipCodeA1[8])) ||  (zipCode1[0].equals(zipCodeL.get(0)))))))){
                     String nameFromZip = zipCodes.get(zipCode1[0]);
                     System.out.println(nameFromZip);
                     System.out.println(phoneNumbers.get(nameFromZip));
